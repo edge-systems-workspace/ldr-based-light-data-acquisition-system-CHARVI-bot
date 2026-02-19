@@ -19,3 +19,19 @@
  * The program is intended as a simple data acquisition and monitoring demo
  * for educational and prototyping purposes.
 */
+void setup()
+{
+ Serial.begin(9600);
+ while (!Serial); // Important for UNO R4 WiFi
+}
+/**
+ * @brief Main Arduino loop
+ *
+ * Reads the analog value from the LDR pin, prints the raw ADC value, and
+ * classifies the environment as either "Bright Environment" or
+ * "Dark Environment" based on a simple threshold. The results are written
+ * to the Serial Monitor once per second.
+ *
+ * @note No parameters or return value. Side effects: performs analogRead()
+ * and writes to Serial.
+ */
