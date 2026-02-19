@@ -35,3 +35,8 @@ void setup()
  * @note No parameters or return value. Side effects: performs analogRead()
  * and writes to Serial.
  */
+void loop()
+{
+ int ldrRaw = analogRead(LDR_PIN);
+ // Map to percentage
+ int lightPercent = map(ldrRaw, 0, 1023, 0, 100);
